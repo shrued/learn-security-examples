@@ -1,1 +1,6 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+The vulnerability in the original code, spoofing/insecure.js, arises from improper session cookie management. Specifically, the absence of the httpOnly and sameSite flags in the session cookie leaves it vulnerable to exploitation by malicious actors. Without proper safeguards, attackers can perform session hijacking and Cross-Site Request Forgery (CSRF) attacks, compromising user sessions and potentially performing unauthorized actions.
+
+In the secure version, spoofing/secure.js, these vulnerabilities are addressed through robust security measures. By configuring the session cookie with the httpOnly: true flag, client-side scripts are unable to access the cookie, significantly reducing the risk of session hijacking. Additionally, setting the sameSite: true flag ensures that the cookie is only sent with requests originating from the same domain, mitigating the threat of CSRF attacks.
+
+This approach enhances the security posture of the application by fortifying session management against common exploitation techniques. By upholding the principles of confidentiality, integrity, and availability, the secure version minimizes the risk of unauthorized access, data manipulation, and service disruption, thereby fostering a safer user experience.
