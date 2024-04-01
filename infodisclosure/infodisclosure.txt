@@ -1,3 +1,17 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+Insecure Version: The insecure.js server doesn't sanitize user input before using it in MongoDB queries. This allows attackers to inject malicious code (NoSQL injection) that alters how the query functions. For example, the [$ne]= injection manipulates the database query to return data even when it shouldn't.
+Secure Version: The secure.js server carefully sanitizes the input, stripping out potentially harmful characters. This prevents the injected code from changing the intended database query, safeguarding your data.
+
 Which CIA property does tampering violate?
+Tampering primarily violates the Integrity property of the CIA triad like so:
+- CIA Triad:
+-> Confidentiality: Keeping information secret from unauthorized access.
+-> Integrity: Ensuring data remains accurate and unaltered by unauthorized parties.
+-> Availability: Ensuring information and systems remain accessible to authorized users when needed.
+- Tampering and Integrity: Tampering involves unauthorized changes or modifications to data or systems. This directly compromises the trustworthiness and accuracy of the affected information, violating the core principle of integrity.
+
 What additional security mechanisms can you incorporate?
+Input Validation: Go beyond sanitization. Implement strict input validation to enforce the expected format, type, and length of data submitted through the API. This adds an extra layer of defense.
+Parameterized Queries: Where possible, replace dynamic query construction with parameterized queries. This separates the query logic from the user data, drastically reducing the risk of injection attacks.
+User Authentication and Authorization: Implement robust user authentication to verify who's accessing the API. Combine this with fine-grained authorization controls to limit which actions each authenticated user can perform.
+Least Privilege: Adhere to the principle of least privilege. Grant users and applications only the minimum permissions necessary to function, reducing the impact of a potential security breach.
