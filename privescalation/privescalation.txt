@@ -1,0 +1,11 @@
+Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+- Privilege Escalation: This occurs when a user or process gets unauthorized access to resources or actions reserved for higher-level accounts. Weaknesses in software, poor configuration, or inadequate access controls often create paths for attackers to gain these elevated privileges.
+- Secure Version: To prevent this, secure systems follow these principles:
+-> Least Privilege: Grant users and processes only the bare minimum permissions they need to function.
+-> Patching: Regularly update systems to close security holes that attackers could exploit.
+-> Monitoring: Watch for unusual behavior that may signal attempts to escalate privileges.
+
+- What additional security mechanisms can you incorporate to prevent such attacks?
+Multi-factor Authentication (MFA): Require more than just a password (something you know) for login. MFA could include a code sent to your phone (something you have) or a fingerprint scan (something you are).
+Separation of Duties: Don't let one person control critical processes end-to-end. This reduces the potential impact if their account is compromised.
+Security Awareness Training: Educate users to recognize and report suspicious activity that could be related to privilege escalation attempts.
