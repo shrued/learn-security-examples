@@ -1,2 +1,10 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+Repudiation: This occurs when a user denies performing an action, and there's inadequate evidence to prove otherwise. Insecure systems often lack proper logging and auditing to track user behavior.
+Insecure Version: Without tracking, it's difficult to reliably attribute actions (like sending messages) to specific users. This opens the door to disputes and makes it hard to hold individuals accountable.
+Secure Version: A secure system uses detailed logging and potentially digital signatures. These create proof of a user's actions, making it difficult for them to successfully deny what they've done.
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+Robust Authentication: Limit system access to authorized users only. Strong authentication (including multi-factor authentication) helps ensure only the right people can act within the system.
+Digital Signatures: These cryptographic tools verify the sender's identity and prove that a message or document hasn't been tampered with.
+Non-Repudiation Services: Use timestamps, certificates, and other specialized tools to provide strong, legally defensible proof of the origin and state of data.
+Access Controls: Enforce the principle of least privilege - users should have access only to the systems and data they absolutely need to do their jobs.
